@@ -1,0 +1,26 @@
+{
+  "name": "com.scottdoxey.objectdraginteraction",
+  "displayName": "ObjectDragInteraction",
+  "version": "1.0.0",
+  "unity": "2019.1",
+  "unityRelease": "0f1",
+  "description": "A simple component that adds dragging interaction to any object without config.",
+  "license": "MIT",
+  "dependencies": {},
+  "keywords": [
+    "unity",
+    "component",
+    "interaction",
+    "dragging"
+  ],
+  "author": {
+    "name": "Scott Doxey",
+    "email": "hello@scottdoxey.com",
+    "homepage": "http://scottdoxey.com/"
+  },
+  "homepage": "https://github.com/CandyCoded/SafeAreaLayout",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CandyCoded/SafeAreaLayout.git"
+  }
+}
