@@ -7,6 +7,12 @@ namespace ScottDoxey.Interactions
 {
 
     [Serializable]
+    public class ObjectInteractionGrabEvent : UnityEvent<Vector3>
+    {
+
+    }
+
+    [Serializable]
     public class ObjectInteractionReleaseEvent : UnityEvent<Vector3, Vector3, Vector3, Vector3>
     {
 
@@ -16,6 +22,8 @@ namespace ScottDoxey.Interactions
     {
 
         private const float DAMPEN_INPUT_POSITION_SPEED = 0.01f;
+
+        public ObjectInteractionGrabEvent Grabbed;
 
         public ObjectInteractionReleaseEvent Released;
 
@@ -53,6 +61,8 @@ namespace ScottDoxey.Interactions
                 _dragStartDistance = hit.distance;
 
                 _dragStartOffset = _dragStartPosition.Value - hit.point;
+
+                Grabbed?.Invoke(_dragStartPosition.Value);
 
             }
 
