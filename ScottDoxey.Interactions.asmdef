@@ -1,5 +1,6 @@
 {
     "name": "ScottDoxey.Interactions",
+    "rootNamespace": "",
     "references": [
         "CandyCoded"
     ],
