@@ -18,9 +18,9 @@
     "email": "hello@scottdoxey.com",
     "homepage": "http://scottdoxey.com/"
   },
-  "homepage": "https://github.com/CandyCoded/SafeAreaLayout",
+  "homepage": "https://github.com/CandyCoded/ObjectDragInteraction",
   "repository": {
     "type": "git",
-    "url": "git@github.com:CandyCoded/SafeAreaLayout.git"
+    "url": "git@github.com:CandyCoded/ObjectDragInteraction.git"
   }
 }
