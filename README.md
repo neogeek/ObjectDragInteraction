@@ -11,7 +11,7 @@
 ```json
 {
   "dependencies": {
-    "com.scottdoxey.objectdraginteraction": "https://github.com/neogeek/ObjectDragInteraction.git#v1.0.0",
+    "com.scottdoxey.objectdraginteraction": "https://github.com/neogeek/ObjectDragInteraction.git#v1.1.0",
     ...
   }
 }
