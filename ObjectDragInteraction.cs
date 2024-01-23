@@ -7,6 +7,18 @@ namespace ScottDoxey.Interactions
 {
 
     [Serializable]
+    public struct ObjectDragInteractionConstraints
+    {
+
+        public bool x;
+
+        public bool y;
+
+        public bool z;
+
+    }
+
+    [Serializable]
     public class ObjectInteractionGrabEvent : UnityEvent<Vector3>
     {
 
@@ -22,6 +34,8 @@ namespace ScottDoxey.Interactions
     {
 
         private const float DAMPEN_INPUT_POSITION_SPEED = 0.01f;
+
+        public ObjectDragInteractionConstraints Constraints;
 
         public ObjectInteractionGrabEvent Grabbed;
 
@@ -74,9 +88,15 @@ namespace ScottDoxey.Interactions
                 if (_lastInputPosition.HasValue && _dragStartDistance.HasValue && _dragStartOffset.HasValue)
                 {
 
-                    gameObject.transform.position =
-                        _mainCamera.ScreenPointToRay(_lastInputPosition.Value).GetPoint(_dragStartDistance.Value) +
-                        _dragStartOffset.Value;
+                    var newPosition = _mainCamera.ScreenPointToRay(_lastInputPosition.Value)
+                                          .GetPoint(_dragStartDistance.Value) +
+                                      _dragStartOffset.Value;
+
+                    if (Constraints.x) newPosition.x = _dragStartPosition.Value.x;
+                    if (Constraints.y) newPosition.y = _dragStartPosition.Value.y;
+                    if (Constraints.z) newPosition.z = _dragStartPosition.Value.z;
+
+                    gameObject.transform.position = newPosition;
 
                 }
 
